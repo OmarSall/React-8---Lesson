@@ -1,7 +1,7 @@
-import { useGetPostByIdQuery } from '../api/api';
+import {useGetPostByIdQuery} from '../api/api';
 
-export const Post = ({ id }) => {
-    const { data, isFetching } = useGetPostByIdQuery(id);
+export const Post = ({id}) => {
+    const {data, isFetching} = useGetPostByIdQuery(id);
 
     if (isFetching) {
         return <div>Loading...</div>

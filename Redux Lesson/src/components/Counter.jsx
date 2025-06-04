@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import {useState} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import {decreaseByAmount, increaseByAmount} from '../store/counterSlice';
 
 export const Counter = () => {

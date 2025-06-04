@@ -1,4 +1,4 @@
-import { useGetTodosQuery, useDeleteTodoMutation } from '../api/api';
+import {useGetTodosQuery, useDeleteTodoMutation} from '../api/api';
 
 export const TodosList = () => {
     const {data: todos, isLoading, error} = useGetTodosQuery();
@@ -13,16 +13,16 @@ export const TodosList = () => {
     }
 
     return (
-      <div>
-          <h2>Todos</h2>
-          <ul>
-              {todos?.map(({id, title, completed}) => (
-                  <li key={id}>
-                      <button onClick={() => deleteTodo(id)}>Delete</button>
-                      <span>{title}</span> - <strong>{completed ? '✅' : '❌'}</strong>
-                  </li>
-              ))}
-          </ul>
-      </div>
+        <div>
+            <h2>Todos</h2>
+            <ul>
+                {todos?.map(({id, title, completed}) => (
+                    <li key={id}>
+                        <button onClick={() => deleteTodo(id)}>Delete</button>
+                        <span>{title}</span> - <strong>{completed ? '✅' : '❌'}</strong>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 };

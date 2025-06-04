@@ -1,7 +1,7 @@
-import { useGetTodoByIdQuery } from '../api/api';
+import {useGetTodoByIdQuery} from "../api/api.jsx";
 
-export const Todo = ({ id }) => {
-    const { data, isLoading, error } = useGetTodoByIdQuery(id);
+export const Todo = ({id}) => {
+    const {data, isLoading, error} = useGetTodoByIdQuery(id);
 
     if (isLoading) {
         return <div>Loading...</div>;

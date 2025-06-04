@@ -1,10 +1,11 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
-export const api = createApi({
+const api = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://jsonplaceholder.typicode.com'}),
-    tagTypes: ['Post','Todo'],
+        baseUrl: 'https://jsonplaceholder.typicode.com'
+    }),
+    tagTypes: ['Post', 'Todo'],
     endpoints: builder => ({
         getPosts: builder.query({
             query: () => '/posts',
@@ -34,10 +35,12 @@ export const api = createApi({
                 url: `/todos/${id}`,
                 method: 'DELETE',
             }),
-            invalidatesTags: ['Post','Todo'],
+            invalidatesTags: ['Post', 'Todo'],
         }),
     }),
 });
+
+export default api;
 
 export const {
     useGetPostsQuery,
